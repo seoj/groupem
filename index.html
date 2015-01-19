@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" type="text/css" href="src/app.css">    
+</head>
+<body>
+    
+    <h1>Groupem!</h1>
+    
+    <p>Calculates groups of people such that:</p>
+    <ul>
+        <li>each group does not exceed in number of people the given value; and,</li>
+        <li>no two person in the same exclusion group exist in the same group</li>
+    </ul>
+    <p>ex. You want to create groups such that couples are always separated. Jane and Bob are couples. Then the group will be something like Jane,Bill and Joe,Bob. The group will never be Jane,Bob and Bill,Joe.</p>
+    <p>Please note that certain parameters will not yield any results because either there is no possible groups or the calculation timed out. Try 2 or 3 times before giving up.</p>
+    
+    <hr />
+    
+    <div>
+        <p>Enter names of people separated by a comma.</p>
+        <label>People:</label>
+        <textarea id="people"></textarea>
+    </div>
+    
+    <div>
+        <p>Enter names of people separated by a comma, and groups separated by a line</p>
+        <p>ex.</p>
+        <pre>
+        a,b,c <-- this is one group
+        d,e,f <-- this is another group
+        </pre>
+        <label>Exclusion groups:</label>
+        <textarea id="exclusions"></textarea>
+    </div>
+    
+    <div>
+        <p>Enter the maximum number of people allowed in a group. Number of groups will be calculated based on how many people there are total and how many people are allowed in a group. This number does not gurantee that the size of the group will be equal to this value, only that it is less than.</p>
+        <label>Maximum # of people per group:</label>
+        <input type="number" id="size">
+    </div>
+    
+    <div>
+        <p>Run the calculation!</p>
+        <button id="calculate">Calculate</button>
+    </div>
+    
+    <hr />
+    
+    <div>
+        <label>Results:</label>
+        <textarea id="results" disabled></textarea>
+    </div>
+    
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>
